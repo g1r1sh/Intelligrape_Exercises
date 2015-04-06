@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	div {
+		width: 150px;
+		height: 150px;
+		color: white;
+		
+		font-family: sans-serif;
+		font-size: 1.6em;
+		text-align: center;
+	}
+	div.y {
+		background-color: yellow;
+		z-index: 1;
+	}
+	div.b {
+		background-color: blue;
+		opacity: .35;
+		z-index: 2;
+		position: absolute;
+		top: 75px; 
+    	left:75px;
+	}
+	</style>
+</head>
+<body>
+<div class="y"></div>
+<div class="b">Text</div>
+</body>
+</html>
