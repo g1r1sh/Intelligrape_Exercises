@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Text Change</title>
+<style type="text/css">
+	p {
+		color: #00bffc;
+		font-size: 1.2em;
+		font-family: sans-serif;
+	}
+</style>
+</head>
+<body>
+	<p>
+		Hi
+	</p>
+	<br/>
+	<input type="button" value="Change Text" onclick="changeText()">
+	<script src="jquery-2.1.3.min.js"></script>
+	<script>
+	a=1
+	function changeText() {
+		if(a%2) {
+			$('p').text("Hello");
+		}
+		else {
+			$('p').text("Hi");
+		}
+		a++;	
+	}	
+	</script>
+</body>
+</html>

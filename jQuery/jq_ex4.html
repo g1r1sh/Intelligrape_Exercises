@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Toogles </title>
+	<style type="text/css">
+		div {
+			width: 300px;
+			height: 300px;
+		}
+			div.on {
+				background-color: #0f0;
+			}
+			div.off {
+				background-color: #00f;
+			}
+	</style>
+</head>
+	<body>
+	<div class="on"></div>
+	<br/>
+	<input type="button" value="On/Off Toggle" onclick="classToggle()">
+	<script src="jquery-2.1.3.min.js"></script>
+	<script>
+		function classToggle() {
+				if($('div.on').length) {
+					$('div').attr('class','off');
+				}
+				else {
+					$('div').attr('class','on');
+				}
+			}
+	</script>
+</body>
+</html>

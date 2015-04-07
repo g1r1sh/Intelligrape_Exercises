@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Anchor tag detection</title>
+<style type="text/css">
+	p {
+		color: #00bffc;
+		font-size: 1.2em;
+		font-family: sans-serif;
+	}
+</style>
+</head>
+<body>
+	<p>
+		<a href='http://www.google.com/policy.pdf'>Policy</a>
+		<br/>
+		<a href='www.yahoo.com/logo.png' title='yahoo logo'>View Logo</a><br/>
+		<a href='http://www.facebook.com' title='Facebook'>Facebook</a>
+		<br/>
+		<script src="jquery-2.1.3.min.js"></script>
+		<script>
+			$('a[href$="pdf"]').after(" (A pdf link)");
+			$('a[href^="http"]').after(" (Start with http)");
+			$('a[title]').after(" (Have a title tag)");
+		</script>
+	</p>
+</body>
+</html>
