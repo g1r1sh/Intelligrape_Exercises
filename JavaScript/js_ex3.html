@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Object Demo</title>
+	<style type="text/css">
+		div {
+			color: #00bffc;
+			font-size: 1.2em;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id='timeDisp'>
+
+	</div>
+	<input type="submit" value="Show Date" onclick="timeDisplay('timeDisp')" style="margin:50px">
+	<script src="date.js"></script>
+	<script>
+		
+		function timeDisplay() {
+			var clock = {
+				showDate : showFormatedDate(arguments[0])
+			};
+			clock.showDate;
+		}
+	</script>
+</body>
+</html>

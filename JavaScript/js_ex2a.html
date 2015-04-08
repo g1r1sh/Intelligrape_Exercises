@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Element Modifier</title>
+	<style type="text/css">
+		div {
+			color: #00bffc;
+			font-size: 1.2em;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id='did'>
+		Dummy text!
+	</div>
+	<input type="submit" value="Modify element's contents" onclick="elementModifier('did')">
+	<script>
+		function elementModifier() {
+			document.getElementById(arguments[0]).innerHTML = "<p>Modified Text!</p>"
+		}
+	</script>
+</body>
+</html>

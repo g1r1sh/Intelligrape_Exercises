@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form exercises</title>
+</head>
+<body>	
+	<input type="button" value="Name prompt" onclick="namePrompt()"><br/><br/>
+	<input type="text" id="txtBox" style="visibility:hidden">
+	<script>
+	function namePrompt() {
+		var name = prompt("Enter Name:");
+		document.getElementById('txtBox').style.visibility = "visible";
+		document.getElementById('txtBox').value = name;
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Interval Demo</title>
+	<style type="text/css">
+		div {
+			color: #00bffc;
+			font-size: 1.2em;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id='timeDisp'></div>
+	<input type="submit" value="Stop RealTime Date" onclick="stopShowDate()" style="margin:50px">
+	<script>
+		function updateTime() {
+			var d= new Date();
+			document.getElementById('timeDisp').innerHTML = d.toUTCString();
+		}
+		function stopShowDate() {
+			clearInterval(pid);
+		}
+		var pid = setInterval(updateTime,1000);
+	</script>
+</body>
+</html>

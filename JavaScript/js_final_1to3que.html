@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Simple Interest</title>
+	<style type="text/css">
+		p {
+			color: #00bffc;
+			font-size: 1.2em;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<p id="disp"></p>
+	<br/>
+	<input type="button" value="Calculate simple interest" onclick="calSI()">
+	<input type="button" value="Check palindrome string" onclick="
+	chkPlndstr()">
+	<input type="button" value="Calculate area of circle" onclick="
+	circArea()">
+	<script>
+		function calSI() {
+			var amt = prompt("Enter amount: ");
+			var rate = prompt("Enter rate: ");
+			var time = prompt("Enter No. of years: ");
+			alert("Simple Interest is: " + (amt*rate*time)/100);
+		}
+		function chkPlndstr() {
+			var str = prompt("Enter String: ");
+			for(i=0,j=str.length-1;i<=str.length/2;i++,j--) {
+				if(str.charAt(i)!=str.charAt(j)){
+					break;
+				}
+			}
+			if(i<=str.length/2) {
+				alert(" Not a Palindrome string.");
+			}
+			else {
+				alert(" A Palindrome string.");
+			}
+		}
+		function circArea() {
+			var r = prompt("Enter radius of circle:");
+			alert("Area of circle is: " + Math.PI*r*r)
+		}
+	</script>
+</body>
+</html>

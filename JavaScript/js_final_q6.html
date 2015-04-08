@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form exercises</title>
+</head>
+<body>
+	<p>
+  <form method="POST" onsubmit="return IsValid()">
+	Enter Name:<br/>
+	<input type="text" id="name">
+	<br/><br/>
+	Enter Age:<br/>
+	<input type="text" id="age">
+	</p>
+	<input type="submit" value="Submit">
+  </form>
+  <script>
+	function IsValid() {
+		if(document.getElementById('name').value.length && document.getElementById('age').value>=18) {
+			alert("Succesfully submitted.");
+			return true;
+		}
+		else {
+			alert("Error! (Name field is required & age must be greater than or equals to 18)");
+			return false;
+		}
+	}
+	</script>
+</body>
+</html>

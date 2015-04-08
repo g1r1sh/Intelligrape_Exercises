@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form exercises</title>
+</head>
+<body>
+	<p>Enter text here:<br/>
+	<input type="text" id="txtBox1" onchange="copyText(this.value)">
+	<br/><br/>
+	TextBox copy:<br/>
+	<input type="text" id="txtBox2">
+	</p>
+	<script>
+	function copyText(val) {
+		document.getElementById('txtBox2').value = val;
+	}
+	</script>
+</body>
+</html>
