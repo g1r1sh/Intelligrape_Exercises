@@ -1,0 +1,178 @@
+Exercises: 
+
+1.Create a set from a list containing duplicate elements. What do you observe? How can you achieve the same result without converting a list to a set?
+
+PROGRAM:
+
+List list = [1,2,2,3,3,4]
+Set s=list
+println s
+println list
+println list.unique()
+
+OUTPUT:
+[1, 2, 3, 4]
+[1, 2, 2, 3, 3, 4]
+[1, 2, 3, 4]
+
+2.Get first, second and last element of Range. 
+
+PROGRAM:
+Range range = (1..10)
+println range.first()
+println range.getAt(1) // or println range.tail().first()
+println range.last()
+
+OUTPUT:
+1
+2
+10
+
+3.Print the table of a given number : 2 and 12
+
+PROGRAM:
+
+(1..10).each {
+    printf("| %4d | %4d |\n", 2*it,12*it )
+}
+
+OUTPUT:
+|    2 |   12 |
+|    4 |   24 |
+|    6 |   36 |
+|    8 |   48 |
+|   10 |   60 |
+|   12 |   72 |
+|   14 |   84 |
+|   16 |   96 |
+|   18 |  108 |
+|   20 |  120 |
+
+4.We have a sorted list of alphabets a-z, print all alphabets appearing after "j"
+
+PROGRAM:
+
+List list = ('a'..'z')
+list.each {
+    if(it>='j')
+        print "${it} "
+}
+
+OUTPUT:
+j k l m n o p q r s t u v w x y z 
+
+5.Create a new map consisting of 10 of your friend's name's as keys and their ages as value.
+
+PROGRAM:
+
+Map map = [:]
+(1..10).each {
+	map.put("user ${it}" , it+20)
+}
+println map
+
+OUTPUT:
+[user 1:21, user 2:22, user 3:23, user 4:24, user 5:25, user 6:26, user 7:27, user 8:28, user 9:29, user 10:30]
+
+6. Iterate over the previous map in as many ways as possible 
+
+PROGRAM:
+
+Map map = [:]
+(1..10).each {
+map.put("user ${it}" , it+20)
+}
+map.each{
+    println it
+}
+
+map.eachWithIndex { frndList,idx ->
+    println "${idx+1}: ${frndList.key} : ${frndList.value}"
+}
+
+map.keySet().each {
+    println "${it}: ${map.get(it)} "}
+
+map.entrySet().each{
+  println "${it.key}: ${it.value}"
+}
+
+7. Create a new map by adding two existing maps 
+
+PROGRAM:
+Map m1 = ["a":123]
+Map m2 = ["b":124, "c":125]
+Map m3 = m1 + m2
+println m3
+
+OUTPUT:
+[a:123, b:124, c:125]
+
+8. Try the following code on a map: 
+println map.class 
+println map.getClass()
+
+ANS. map.class returns null if there is no key named class in map whereas getClass() will give class name java.util.LinkedHashMap
+
+  
+9. What do you observe? 
+Consider the following map: 
+Map m = ['1' : 2, '2' : 3, '3' : 4, '2':5] 
+
+Is this a valid construction? What is the value of m['2']? 
+
+ANS. Yes it's a valid construction. If there are more than one defined values for a key, only the most recent value is assigned to that key.
+Thus value of m['2'] will be 5. 
+
+10. Find if a map contains a particular key. 
+Consider the following map: 
+Map m = [
+    	 ‘Computing’ : [‘Computing’ : 600, ‘Information Systems’ : 300], 
+         ‘Engineering’ : [‘Civil’ : 200, ‘Mechanical’ : 100], 
+         ‘Management’ : [‘Management’ : 800] 
+       ] 
+
+a) How many university departments are there? 
+	println m.keySet().size()
+	O/P: 3
+
+b) How many programs are delivered by the Computing department? 
+	println m['Computing'].size()
+	O/P: 2
+c) How many students are enrolled in the Civil Engineering program? 
+	println m.Engineering.Civil
+	O/P: 200
+
+11. Consider a class named "Employee" which has the following properties: 
+1) Name 
+2) Age 
+3) DepartmentName 
+4) EmployeeNumber 
+5) Salary 
+
+Let's say that there's a list of 50 employees available. Perform the following operations on the list of employees: 
+a) Group the employees on the basis of the bracket in which their salary falls. The ranges are 0-5000, 5001 and 10000, and so on. 
+b) Get a count of the number of employees in each department 
+c) Get the list of employees whose age is between 18 and 35 
+d) Group the employees according to the alphabet with which their first name starts and display the number of employees in each group whose age is greater than 20 
+e) Group the employees according to their department. 
+
+12. Write a method which returns the value of passed key from a search string of the form  "http://www.google.com?name=johny&age=20&hobby=cricket"
+
+PROGRAM : 
+String val(String search) {
+	def str="http://www.google.com?name=johny&age=20&hobby=cricket"
+	def map=[:]
+	def args=[]
+	str.tokenize('?')[1].tokenize('&').each {
+      args=it.tokenize('=')
+      map.put(args[0],args[1])
+      args=[]        
+	}
+	return map.get(search)
+}
+
+println val("hobby")
+
+OUTPUT:
+cricket
